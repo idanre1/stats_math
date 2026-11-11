@@ -8,3 +8,4 @@ from stats_math.moments.src.realized_moments import realized_var
 from stats_math.moments.src.realized_moments import realized_skew
 from stats_math.moments.src.realized_moments import realized_kurt
 from stats_math.stats_tests.tests import white_test
+from stats_math.rng.src.rng import make_rng
