@@ -46,6 +46,12 @@ def make_rng(seed: int | None, stream: str | None = None) -> np.random.Generator
     False
     >>> isinstance(make_rng(None, "bootstrap").random(), float)
     True
+
+    Golden values, fixed since the stream keying was introduced (a change here breaks
+    every seeded result downstream):
+
+    >>> int(make_rng(7, "bootstrap").integers(10**9)), int(make_rng(7).integers(10**9))
+    (327884863, 944904955)
     """
     if seed is not None and not isinstance(seed, (int, np.integer)):
         raise TypeError(f"seed must be int or None, got {type(seed).__name__}")
